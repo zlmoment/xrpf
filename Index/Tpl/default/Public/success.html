@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>新软攀峰官方网站</title>
+<meta http-equiv='Refresh' content='{$waitSecond};URL={$jumpUrl}' />
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<include file="Common:header" />
+
+	<div id="wrap">
+		<div id="success">
+			<p>
+				{$message}<br /><br /> 如果页面{$waitSecond}秒后没有自动跳转，<a href="{$jumpUrl}">点击这里跳转。</a>
+			</p>
+		</div>
+	</div>
+
+	<include file="Common:footer" />
+</body>
+</html>

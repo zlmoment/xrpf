@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>新软攀峰官方网站</title>
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<include file="Common:header" />
+
+	<div id="wrap">
+		<div class="relative">
+			<h2>留言</h2>
+			<div id="seperateline"></div>
+			<form id="msg-form" method="post"
+				action="__APP__/public/leavemessage_do">
+				<div class="row relative">
+					<p><label>您的学号（对您留言的回复将发送到<span style="color:blue">学号@bjtu.edu.cn</span>邮箱）</label> </p>
+					<p><input type="text" name="stuno"></p>
+				</div>
+
+				<div class="row relative">
+					<p><label>您的姓名（可选）</label> </p>
+					<p><input type="text" name="stuname"></p>
+				</div>
+				
+				<div class="row relative">
+					<p><label>留言内容</label> </p> 
+					<p><textarea name="msgcontent" style="width:350px;height:150px;"></textarea></p>
+				</div>
+
+				<div class="row">
+					<button type="submit" class="btn">提 交</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<include file="Common:footer" />
+</body>
+</html>

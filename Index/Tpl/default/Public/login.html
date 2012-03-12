@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>新软攀峰官方网站</title>
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<include file="Common:header" />
+
+	<div id="wrap">
+		<div id="sign_form">
+			<h2>组长登录</h2>
+			<form id="login-form" method="post"
+				action="__APP__/public/login_do">
+				<div class="row relative">
+					<label for="id_username">组长学号</label> <input
+						id="id_username" type="text" name="stuno">
+				</div>
+
+				<div class="row relative">
+					<label for="id_password">密码</label> <input id="id_password"
+						type="password" name="password">
+				</div>
+
+				<div class="row">
+					<button type="submit" class="btn">登 录</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<include file="Common:footer" />
+</body>
+</html>

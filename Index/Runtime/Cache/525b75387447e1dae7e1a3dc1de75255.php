@@ -1,0 +1,66 @@
+<?php if (!defined('THINK_PATH')) exit();?><div id="main_nav">
+	<div id="main_nav_box">
+		<div id="logo">
+			<a href="__APP__">xrpf</a>
+		</div>
+		<ul>
+			<li><a href="__APP__">首 页</a></li>
+			<li><a href="__APP__/publish/index">公 告</a></li>
+			<li><a href="__APP__/publish/about">比赛说明</a></li>
+			<li><a href="__APP__/public/leavemessage">留 言</a></li>
+			<li><a href="__APP__/user"><?php if(Session::get(C('USER_AUTH_KEY'))) echo "我的小组"; else echo "组长登录" ?></a></li>
+			
+		</ul>
+	</div>
+</div>
+<script>
+$(document).ready(function()
+  { $('#BetaSignup').formly({'onBlur':true, 'theme':'Light'}); });
+</script>
+    <div class="main">
+    <div class="main_t"></div>
+    
+    <div class="main_c" style="min-height:480px;">
+    
+    <div class="modu_tit"><span class="modu_tit_03"></span> 
+    </div>
+        <div class="seve_small">
+        <p>
+			<form id="BetaSignup" action="__APP__/signup/signtodb" method="post" width="93%" title="组长注册" subtitle="请组长填写自己和小组项目的相关信息">
+			<input type="text" name="stuno" label="组长学号" place="组长学号" size="50" require="true"/><br />
+			<input type="password" name="password" require="true" label="Password" place="请输入密码" />
+			<input type="password" name="passwordMatch" match="password" label="Password" place="请再次输入密码" /><br />
+			<input type="text" name="username" label="组长姓名" place="组长姓名，请填写真实姓名，否则无效" size="50" require="true"/><br />
+			<input type="text" name="email" label="组长邮箱" place="组长邮箱地址" size="50" require="true"/><br />
+			<input type="text" name="phone" label="组长的手机" place="组长的手机" size="30" require="true"/><br />
+			组长所在的年级：<select name="grade" label="组长所在的年级">
+				<option value="1">大一</option>
+				<option value="2">大二</option>
+				<option value="3">大三</option>
+				<option value="4">大四</option>
+				<option value="5">其它</option>
+			</select><br />
+			
+			<input type="text" name="groupname" label="参赛小组名" place="参赛小组名" size="50" require="true"/><br />
+			<input type="text" name="prosummary" label="项目简短描述" place="项目简短描述（最多1000字）" size="100" require="true"/><br />
+			参赛组别（非常重要）：<select name="grouptype" label="参赛组别">
+				<option value="1">设计组</option>
+				<option value="2">创意组</option>
+			</select><br />
+			<input type="submit" value="注册" /><input type="reset" value="重置" />
+			</form>
+        </p>    
+        </div>
+    
+  
+    </div> 
+    <div class="main_b" style="color:white;">软件学院科协 研发中心制</div>
+    <div class="foot_link"></div>
+    </div>
+    
+    
+	<div class="c"></div>
+	</div>
+</div>
+</body>
+</html>

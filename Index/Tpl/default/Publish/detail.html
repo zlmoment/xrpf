@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>新软攀峰官方网站</title>
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<include file="Common:header" />
+
+	<div id="wrap">
+		<div id="main">
+
+			<h1>
+				{$result.title}<em>{$result.pubtime}</em>
+			</h1>
+
+			<div class="post">
+				{$result.content}
+			</div>
+
+		</div>
+		<div id="sidebar"></div>
+	</div>
+
+	<include file="Common:footer" />
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>新软攀峰官方网站</title>
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<include file="Common:header" />
+
+	<div id="wrap">
+		<div class="profile_wrap">
+			<div id="leftbg"></div>
+			<div id="left">
+				<ul id="profile_menu">
+					<li><a href="#">小组资料</a>
+						<ul class="submenu">
+							<li><a href="__APP__/user/index">个人资料</a></li>
+							<li><a href="__APP__/user/repassword">密码修改</a></li>
+							<li class="active"><a href="__APP__/user/group">成员管理</a></li>
+							<li><a href="__APP__/user/project">项目信息</a></li>
+						</ul></li>
+					<li><a href="#">项目跟踪</a>
+						<ul class="submenu">
+							<li><a href="__APP__/handin/step1">提交立项表</a></li>
+							<li><a href="__APP__/handin/step2">提交中期报告</a></li>
+							<li><a href="__APP__/handin/step3">提交终期报告</a></li>
+						</ul></li>
+					<li><a href="#">成果提交</a>
+						<ul class="submenu">
+							<li><a href="__APP__/handin/finalproject">成果提交</a></li>
+						</ul></li>
+					<li><a href="#">操作</a>
+						<ul class="submenu">
+							<li><a href="__APP__/public/login">退出系统</a></li>
+						</ul></li>
+
+				</ul>
+			</div>
+			<div id="right">
+				<div class="relative">
+					<p style="font-size:13px;">
+						<if condition="$result['grouptype'] eq '1'">你的小组是<span
+							style="color: red">【设计组】</span>，设计组包括组长在内，最少 3 名成员，最多 5 名成员。<else />你的小组是<span
+							style="color: red">【创意组】</span>，创意组包括组长在内，最少 1 名成员，最多 3 名成员。</if>
+					</p>
+					<form id="group-form" class="form" action="__APP__/user/group_do"
+						method="post">
+
+						<div style="display: none">
+							<input type="hidden" name="uid" value="{$result.uid}" />
+						</div>
+						<if condition="$result['grouptype'] eq '1'"> 
+						<div class="row radio_input">
+							<label class="everysingle">组员二信息（必填）：</label>
+							<p>学号：<input name="u1_stuno" type="text"
+								value="{$gresult.u1_stuno}"></p>
+							<p>姓名：<input name="u1_name" type="text"
+								value="{$gresult.u1_name}"></p>
+							<p>手机：<input name="u1_phone" type="text"
+								value="{$gresult.u1_phone}"></p>
+							<p>邮箱：<input name="u1_email" type="text"
+								value="{$gresult.u1_email}"></p>
+							<p>年级：
+								<ul>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==1) echo "checked=\"checked\""; ?> name="u1_grade" value="1" type="radio"> 大一</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==2) echo "checked=\"checked\""; ?> name="u1_grade" value="2" type="radio"> 大二</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==3) echo "checked=\"checked\""; ?> name="u1_grade" value="3" type="radio"> 大三</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==4) echo "checked=\"checked\""; ?> name="u1_grade" value="4" type="radio"> 大四</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==5) echo "checked=\"checked\""; ?> name="u1_grade" value="5" type="radio"> 其它</label>
+								</li>
+							</ul>
+							</p>
+						</div>
+						<div class="row radio_input">
+							<label class="everysingle">组员三信息（必填）：</label>
+							<p>学号：<input name="u2_stuno" type="text"
+								value="{$gresult.u2_stuno}"></p>
+							<p>姓名：<input name="u2_name" type="text"
+								value="{$gresult.u2_name}"></p>
+							<p>手机：<input name="u2_phone" type="text"
+								value="{$gresult.u2_phone}"></p>
+							<p>邮箱：<input name="u2_email" type="text"
+								value="{$gresult.u2_email}"></p>
+							<p>年级：
+								<ul>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==1) echo "checked=\"checked\""; ?> name="u2_grade" value="1" type="radio"> 大一</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==2) echo "checked=\"checked\""; ?> name="u2_grade" value="2" type="radio"> 大二</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==3) echo "checked=\"checked\""; ?> name="u2_grade" value="3" type="radio"> 大三</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==4) echo "checked=\"checked\""; ?> name="u2_grade" value="4" type="radio"> 大四</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==5) echo "checked=\"checked\""; ?> name="u2_grade" value="5" type="radio"> 其它</label>
+								</li>
+							</ul>
+							</p>
+						</div>
+						<div class="row radio_input">
+							<label class="everysingle">组员四信息：</label>
+							<p>学号：<input name="u3_stuno" type="text"
+								value="{$gresult.u3_stuno}"></p>
+							<p>姓名：<input name="u3_name" type="text"
+								value="{$gresult.u3_name}"></p>
+							<p>手机：<input name="u3_phone" type="text"
+								value="{$gresult.u3_phone}"></p>
+							<p>邮箱：<input name="u3_email" type="text"
+								value="{$gresult.u3_email}"></p>
+							<p>年级：
+								<ul>
+								<li><label>
+								<input <?php if($gresult['u3_grade']==1) echo "checked=\"checked\""; ?> name="u3_grade" value="1" type="radio"> 大一</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u3_grade']==2) echo "checked=\"checked\""; ?> name="u3_grade" value="2" type="radio"> 大二</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u3_grade']==3) echo "checked=\"checked\""; ?> name="u3_grade" value="3" type="radio"> 大三</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u3_grade']==4) echo "checked=\"checked\""; ?> name="u3_grade" value="4" type="radio"> 大四</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u3_grade']==5) echo "checked=\"checked\""; ?> name="u3_grade" value="5" type="radio"> 其它</label>
+								</li>
+							</ul>
+							</p>
+						</div>
+						<div class="row radio_input">
+							<label class="everysingle">组员五信息：</label>
+							<p>学号：<input name="u4_stuno" type="text"
+								value="{$gresult.u4_stuno}"></p>
+							<p>姓名：<input name="u4_name" type="text"
+								value="{$gresult.u4_name}"></p>
+							<p>手机：<input name="u4_phone" type="text"
+								value="{$gresult.u4_phone}"></p>
+							<p>邮箱：<input name="u4_email" type="text"
+								value="{$gresult.u4_email}"></p>
+							<p>年级：
+								<ul>
+								<li><label>
+								<input <?php if($gresult['u4_grade']==1) echo "checked=\"checked\""; ?> name="u4_grade" value="1" type="radio"> 大一</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u4_grade']==2) echo "checked=\"checked\""; ?> name="u4_grade" value="2" type="radio"> 大二</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u4_grade']==3) echo "checked=\"checked\""; ?> name="u4_grade" value="3" type="radio"> 大三</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u4_grade']==4) echo "checked=\"checked\""; ?> name="u4_grade" value="4" type="radio"> 大四</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u4_grade']==5) echo "checked=\"checked\""; ?> name="u4_grade" value="5" type="radio"> 其它</label>
+								</li>
+							</ul>
+							</p>
+						</div>
+
+						<else /> 
+						<div class="row radio_input">
+							<label class="everysingle">组员二信息：</label>
+							<p>学号：<input name="u1_stuno" type="text"
+								value="{$gresult.u1_stuno}"></p>
+							<p>姓名：<input name="u1_name" type="text"
+								value="{$gresult.u1_name}"></p>
+							<p>手机：<input name="u1_phone" type="text"
+								value="{$gresult.u1_phone}"></p>
+							<p>邮箱：<input name="u1_email" type="text"
+								value="{$gresult.u1_email}"></p>
+							<p>年级：
+								<ul>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==1) echo "checked=\"checked\""; ?> name="u1_grade" value="1" type="radio"> 大一</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==2) echo "checked=\"checked\""; ?> name="u1_grade" value="2" type="radio"> 大二</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==3) echo "checked=\"checked\""; ?> name="u1_grade" value="3" type="radio"> 大三</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==4) echo "checked=\"checked\""; ?> name="u1_grade" value="4" type="radio"> 大四</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u1_grade']==5) echo "checked=\"checked\""; ?> name="u1_grade" value="5" type="radio"> 其它</label>
+								</li>
+							</ul>
+							</p>
+						</div>
+						<div class="row radio_input">
+							<label class="everysingle">组员三信息：</label>
+							<p>学号：<input name="u2_stuno" type="text"
+								value="{$gresult.u2_stuno}"></p>
+							<p>姓名：<input name="u2_name" type="text"
+								value="{$gresult.u2_name}"></p>
+							<p>手机：<input name="u2_phone" type="text"
+								value="{$gresult.u2_phone}"></p>
+							<p>邮箱：<input name="u2_email" type="text"
+								value="{$gresult.u2_email}"></p>
+							<p>年级：
+								<ul>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==1) echo "checked=\"checked\""; ?> name="u2_grade" value="1" type="radio"> 大一</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==2) echo "checked=\"checked\""; ?> name="u2_grade" value="2" type="radio"> 大二</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==3) echo "checked=\"checked\""; ?> name="u2_grade" value="3" type="radio"> 大三</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==4) echo "checked=\"checked\""; ?> name="u2_grade" value="4" type="radio"> 大四</label>
+								</li>
+								<li><label>
+								<input <?php if($gresult['u2_grade']==5) echo "checked=\"checked\""; ?> name="u2_grade" value="5" type="radio"> 其它</label>
+								</li>
+							</ul>
+							</p>
+						</div>
+						</if>
+						<div class="row">
+							<button type="submit" class="btn">保 存</button>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<include file="Common:footer" />
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>新软攀峰官方网站</title>
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<include file="Common:header" />
+
+	<div id="wrap">
+		<div id="main">
+			<ul class="list">
+				<volist name="result" id="vo">
+				<li><a href="__APP__/publish/detail?nid={$vo.nid}">{$vo.title}</a>
+					<em>{$vo.pubtime}</em></li>
+				</volist>
+			</ul>
+
+		</div>
+		<div id="sidebar">
+		</div>
+	</div>
+
+	<include file="Common:footer" />
+</body>
+</html>
